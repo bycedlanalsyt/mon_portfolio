@@ -1,1 +1,0 @@
-print("La perle rare!")
