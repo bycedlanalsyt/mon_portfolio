@@ -2,7 +2,7 @@
 
 ## 📋 Description
 
-Portfolio professionnel moderne et responsive de Cédric BOIMIN, aspirant Data Analyst étudiant à MBA ESG. Ce site web présente mes projets, compétences et réalisations dans le domaine de l'analyse de données.
+Portfolio professionnel moderne et responsive, aspirant Data Analyst étudiant à MBA ESG. Ce site web présente mes projets, compétences et réalisations dans le domaine de l'analyse de données.
 
 ## 🚀 Fonctionnalités
 
