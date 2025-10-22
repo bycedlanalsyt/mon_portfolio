@@ -181,8 +181,8 @@ Le site s'adapte automatiquement aux différentes tailles d'écran :
 ## 📞 Contact
 
 - **Email** : boimincedric@gmail.com
-- **LinkedIn** : [Votre profil LinkedIn]
-- **GitHub** : [Votre profil GitHub]
+- **LinkedIn** : https://www.linkedin.com/in/cedric-don
+- **GitHub** : https://github.com/bycedlanalsyt
 
 ## 📄 Licence
 
