@@ -2,7 +2,7 @@
 
 ## 📋 Description
 
-Portfolio professionnel moderne et responsive, aspirant Data Analyst étudiant à MBA ESG. Ce site web présente mes projets, compétences et réalisations dans le domaine de l'analyse de données.
+Portfolio web moderne, entièrement responsive, conçu pour présenter mon profil d’aspirant Data Analyst. Ce projet illustre mes compétences en conception front-end et en mise en valeur de contenus professionnels à travers une interface claire et élégante.
 
 ## 🚀 Fonctionnalités
 
