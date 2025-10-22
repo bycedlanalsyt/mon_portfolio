@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cedric BOIMIN | Data Analyst</title> 
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedric BOIMIN | Data Analyst</title>
+    
+    <!-- 👇 AJOUTEZ CETTE LIGNE ICI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+      /* Votre CSS ici... */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --secondary: #0ea5e9;
+  --dark: #000000;              /* 👈 NOIR PUR */
+  --dark-light: #0a0a0a;        /* 👈 NOIR LÉGÈREMENT PLUS CLAIR */
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent: #60a5fa;
+  --border: #1a1a1a;            /* 👈 BORDURES NOIRES */
+     
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Header moderne */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--text);
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .btn-contact {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent);
+      border-radius: 50%;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-50px, 50px); }
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--text), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    /* Section standard */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-top: 1.5rem;
+    }
+
+    /* Filtres modernes */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.7rem 1.8rem;
+      background: var(--dark-light);
+      border: 2px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Grille de projets */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .project-card {
+      background: var(--dark-light);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border-color: var(--primary);
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      background: var(--dark);
+    }
+
+    .project-content {
+      padding: 2rem;
+    }
+
+    .project-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+
+    .project-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      padding: 0.4rem 1rem;
+      background: rgba(37, 99, 235, 0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      flex: 1;
+      padding: 0.7rem;
+      text-align: center;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .link-demo {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .link-code {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .project-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .skill-item {
+  background: var(--dark-light);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-item i {
+  font-size: 3rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover i {
+  transform: scale(1.2) translateY(-5px);
+  color: var(--secondary);
+}
+
+    .skill-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+    }
+
+    .skill-item h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark-light);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      margin-top: 6rem;
+    }
+
+    .footer p {
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    /* ========================================
+       EFFET DE TRAÎNÉE DU CURSEUR
+       ======================================== */
+       .cursor-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, var(--primary), var(--secondary));
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.8;
+      animation: fadeDot 0.8s ease-out forwards;
+      box-shadow: 0 0 10px var(--primary), 0 0 20px var(--secondary);
+    }
+
+    @keyframes fadeDot {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Responsive */
+
+    @media (max-width: 968px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav-container">
+      <a href="#" class="logo">
+        <img src="mes_images/photo2.jpg" alt="Cedric BOIMIN" class="logo-img">
+        <span>Cédric BOIMIN</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="contact.html" class="btn-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="subtitle">👋 Bonjour, je suis</p>
+        <h1>Cédric BOIMIN</h1>
+        <p>Aspirant <strong>Data Analyst</strong> passionné par la transformation des données en décisions stratégiques. Étudiant à MBA ESG, je me forme à maîtriser Excel, PowerBI, SQL et Python pour révéler les insights cachés dans les données.</p>
+        <div class="hero-buttons">
+          <a href="#projets" class="btn btn-primary">Découvrir mes projets →</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <img src="mes_images/photo1.jpg" alt="Cedric BOIMIN - Data Analyst" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Projets -->
+  <section class="section" id="projets">
+    <div class="section-header">
+      <h2>Mes Projets</h2>
+      <p>Découvrez mes réalisations en analyse de données et développement</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="Excel">Excel</button>
+      <button class="filter-btn" data-filter="PowerBI">PowerBI</button>
+      <button class="filter-btn" data-filter="SQL">SQL</button>
+      <button class="filter-btn" data-filter="Python">Python</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Les projets seront générés par JavaScript -->
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section class="section" id="competences">
+    <div class="section-header">
+      <h2>Compétences</h2>
+      <p>Les outils et technologies que j'apprends à maîtriser</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-item">
+        <i class="fas fa-file-excel"></i>
+        <h3>Excel</h3>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-chart-line"></i>
+        <h3>PowerBI</h3>
+      </div>
+      <div class="skill-item">
+        <i class="fas fa-database"></i>
+        <h3>SQL</h3>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-python"></i>
+        <h3>Python</h3>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-html5"></i>
+        <h3>HTML/CSS</h3>
+      </div>
+      <div class="skill-item">
+        <i class="fab fa-js-square"></i>
+        <h3>JavaScript</h3>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Cédric BOIMIN. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    // ========================================
+    // DONNÉES DES PROJETS
+    // ========================================
+    // Pour ajouter vos projets, copiez un bloc et modifiez :
+    // - id: identifiant unique (ex: 'excel-2', 'python-3')
+    // - title: titre de votre projet
+    // - description: description courte
+    // - image: chemin vers votre image (ex: './images/mon-projet.jpg')
+    // - tags: liste des technologies ['Excel', 'PowerBI', 'SQL', 'Python']
+    // - demo: lien vers la démo (ou '#' si pas de démo)
+    // - code: lien GitHub de votre code
+    
+    const projects = [
+      {
+        id: 'excel-1',
+        title: 'Dashboard RH Excel',
+        description: 'Tableau de bord interactif pour l\'analyse des KPIs RH avec TCD et graphiques dynamiques.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
+        tags: ['Excel', 'Dashboard', 'RH'],
+        demo: '#',
+        code: 'https://github.com'
+      },
+      {
+        id: 'powerbi-1',
+        title: 'Analyse Ventes PowerBI',
+        description: 'Dashboard PowerBI analysant les performances commerciales par région et produit.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+        tags: ['PowerBI', 'Ventes', 'Dashboard'],
+        demo: '#',
+        code: 'https://github.com'
+      },
+      {
+        id: 'sql-1',
+        title: 'Base de données E-commerce',
+        description: 'Requêtes SQL complexes pour analyser les comportements clients et optimiser les ventes.',
+        image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800',
+        tags: ['SQL', 'Database', 'Analytics'],
+        demo: '#',
+        code: 'https://github.com'
+      },
+      {
+        id: 'python-1',
+        title: 'Analyse de données Python',
+        description: 'Nettoyage et visualisation de données avec Pandas, NumPy et Matplotlib.',
+        image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800',
+        tags: ['Python', 'Pandas', 'Data Analysis'],
+        demo: '#',
+        code: 'https://github.com'
+      },
+      {
+        id: 'excel-2',
+        title: 'Budget Prévisionnel',
+        description: 'Modèle Excel de prévisions financières avec analyses de scénarios.',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800',
+        tags: ['Excel', 'Finance', 'Prévisions'],
+        demo: '#',
+        code: 'https://github.com'
+      },
+      {
+        id: 'python-2',
+        title: 'Machine Learning Prédiction',
+        description: 'Modèle de prédiction de ventes avec scikit-learn et régression.',
+        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800',
+        tags: ['Python', 'ML', 'Prédiction'],
+        demo: '#',
+        code: 'https://github.com'
+      }
+    ];
+
+    // Fonction pour afficher les projets
+    function displayProjects(filter = 'all') {
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = '';
+
+      const filtered = filter === 'all' 
+        ? projects 
+        : projects.filter(p => p.tags.includes(filter));
+
+      filtered.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+          <img src="${project.image}" alt="${project.title}" class="project-image">
+          <div class="project-content">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <div class="project-tags">
+              ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+            <div class="project-links">
+              <a href="${project.demo}" class="project-link link-demo">Détails</a>
+              
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Gestion des filtres
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        displayProjects(btn.dataset.filter);
+      });
+    });
+
+    // Header au scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+  // Initialisation
+  displayProjects();
+
+// ========================================
+// EFFET DE TRAÎNÉE DU CURSEUR (POINTS LUMINEUX)
+// ========================================
+const cursorTrail = [];
+const maxTrailLength = 15; // Nombre de points dans la traînée
+
+document.addEventListener('mousemove', (e) => {
+  // Créer un nouveau point lumineux
+  const dot = document.createElement('div');
+  dot.className = 'cursor-dot';
+  dot.style.left = e.pageX + 'px';
+  dot.style.top = e.pageY + 'px';
+  document.body.appendChild(dot);
+
+  // Ajouter à la liste
+  cursorTrail.push(dot);
+
+  // Limiter le nombre de points
+  if (cursorTrail.length > maxTrailLength) {
+    const oldDot = cursorTrail.shift();
+    oldDot.remove();
+  }
+
+  // Supprimer automatiquement après 800ms
+  setTimeout(() => {
+    dot.remove();
+    const index = cursorTrail.indexOf(dot);
+    if (index > -1) cursorTrail.splice(index, 1);
+  }, 800);
+});
+</script>
+</body>
+</html>

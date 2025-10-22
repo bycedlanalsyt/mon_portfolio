@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Cédric BOIMIN</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background: #0a0a0a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #60a5fa;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #2563eb;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #1e40af, #2563eb);
+    }
+
+    .back-link {
+      text-align: center;
+      display: block;
+      margin-top: 1rem;
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="https://formsubmit.co/boimincedric@gmail.com" method="POST">
+    <h2>Me Contacter</h2>
+
+    <label for="name">Nom</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Envoyer</button>
+
+    <!-- redirection après envoi -->
+    <input type="hidden" name="_next" value="https://tonsite.fr/merci.html">
+    <input type="hidden" name="_captcha" value="false">
+  </form>
+
+  <a href="modern_portfolio.html" class="back-link">← Retour au portfolio</a>
+
+</body>
+</html>
